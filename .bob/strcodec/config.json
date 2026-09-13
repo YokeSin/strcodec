@@ -1,0 +1,18 @@
+{
+  "tool_version": "0.3.1",
+  "chunk_statements": 40,
+  "chunk_max_chars": 20000,
+  "big_literal_chars": 4000,
+  "summary_max_lines": 300,
+  "prewarm": true,
+  "prewarm_max_files": 10,
+  "guard_read": true,
+  "max_prompt_files": 3,
+  "clemb_timeout_sec": 600,
+  "clemb_path": null,
+  "ignore_dirs": [".git", "node_modules", ".venv", "venv", "__pycache__", ".bob", ".claude", "$RECYCLE.BIN"],
+  "max_scan_files": 500,
+  "max_scan_depth": 8,
+  "output_suffix": "_rebuilt",
+  "lock_wait_sec": 120
+}

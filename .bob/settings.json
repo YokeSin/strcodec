@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".bob\\strcodec\\strcodec.cmd hook session-start",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".bob\\strcodec\\strcodec.cmd hook prompt",
+            "timeout": 0
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "^read_file$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".bob\\strcodec\\strcodec.cmd hook guard-read",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

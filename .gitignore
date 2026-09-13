@@ -1,0 +1,18 @@
+# strcodec workspace: decoded sidecars, rebuilt streams, logs and personal settings are not source
+*.strcode/
+*_rebuilt.str
+*_retrained.str
+*.str-
+.bob/strcodec/logs/
+.bob/strcodec/python.path
+.bob/mcp.json
+__pycache__/
+*.pyc
+
+# streams and trained nuggets may contain business data: add them explicitly if they are meant to be shared
+*.str
+*.nod
+!.bob/strcodec/tests/fixtures/**
+
+# the bundled sample is synthetic and is meant to be shared
+!samples/campaign_response.str

@@ -1,0 +1,286 @@
+{
+ "modeler_version": "ServerVersionFixPack=0 ServerVersionMajor=19 ServerVersionMinor=0 ServerVersionRelease=0",
+ "code_file": "generated_raw.py",
+ "source": "C:/x/campaign_response.str",
+ "nodes": [
+  {
+   "annotation": "",
+   "var": "variablefile_node1",
+   "kind": "source",
+   "tooltip": "",
+   "label": "顧客データ",
+   "pred_ids": [],
+   "type": "variablefile",
+   "custom_name": "顧客データ",
+   "succ_ids": [
+    "id4RG116BHZ5VE"
+   ],
+   "x": 78,
+   "y": 97,
+   "id": "id5DR11JXTLNY4",
+   "class": "DelimitedFileImportNode",
+   "modified_props": [
+    "use_custom_name",
+    "full_filename",
+    "custom_name"
+   ]
+  },
+  {
+   "annotation": "",
+   "var": "derive_node1",
+   "kind": "process",
+   "tooltip": "",
+   "label": "訪問あたり単価",
+   "pred_ids": [
+    "id5DR11JXTLNY4"
+   ],
+   "type": "derive",
+   "custom_name": "訪問あたり単価",
+   "succ_ids": [
+    "id3B411EI2J5IJ"
+   ],
+   "x": 210,
+   "y": 97,
+   "id": "id4RG116BHZ5VE",
+   "class": "DeriveNode",
+   "modified_props": [
+    "formula_measure_type",
+    "use_custom_name",
+    "geo_type",
+    "has_coordinate_system",
+    "custom_name",
+    "coordinate_system",
+    "formula_expr",
+    "conditional_measure_type",
+    "collection_measure",
+    "new_name"
+   ]
+  },
+  {
+   "annotation": "",
+   "var": "derive_node2",
+   "kind": "process",
+   "tooltip": "",
+   "label": "優良顧客",
+   "pred_ids": [
+    "id4RG116BHZ5VE"
+   ],
+   "type": "derive",
+   "custom_name": "優良顧客",
+   "succ_ids": [
+    "id6AR11T3VNXJN"
+   ],
+   "x": 342,
+   "y": 97,
+   "id": "id3B411EI2J5IJ",
+   "class": "DeriveNode",
+   "modified_props": [
+    "formula_measure_type",
+    "use_custom_name",
+    "result_type",
+    "custom_name",
+    "flag_expr",
+    "conditional_measure_type",
+    "new_name"
+   ]
+  },
+  {
+   "annotation": "",
+   "var": "type_node1",
+   "kind": "process",
+   "tooltip": "",
+   "label": "データ型",
+   "pred_ids": [
+    "id3B411EI2J5IJ"
+   ],
+   "type": "type",
+   "custom_name": "",
+   "succ_ids": [
+    "id4XN11JHG6PJQ",
+    "id8JH1ZEKMQZPR"
+   ],
+   "x": 462,
+   "y": 97,
+   "id": "id6AR11T3VNXJN",
+   "class": "TypeNode",
+   "modified_props": [
+    "storage_type",
+    "metadata",
+    "role",
+    "values",
+    "description",
+    "storage",
+    "type",
+    "field_missing_metadata",
+    "measure_type",
+    "enable_missing",
+    "collection_measure",
+    "missing_upper",
+    "max_list_length",
+    "geo_type",
+    "extend_values",
+    "range_missing",
+    "field_metadata",
+    "default_value_mode",
+    "whitespace_missing",
+    "max_string_length",
+    "check",
+    "metadata_all",
+    "null_missing",
+    "value_labels",
+    "labels",
+    "missing_values",
+    "missing_metadata",
+    "has_coordinate_system",
+    "coordinate_system",
+    "value_mode",
+    "missing_lower"
+   ]
+  },
+  {
+   "annotation": "",
+   "var": "c50_node1",
+   "kind": "builder",
+   "tooltip": "",
+   "label": "応答予測",
+   "pred_ids": [
+    "id6AR11T3VNXJN"
+   ],
+   "type": "c50",
+   "custom_name": "",
+   "succ_ids": [],
+   "x": 462,
+   "y": 217,
+   "id": "id8JH1ZEKMQZPR",
+   "class": "BuildC5RuleNode",
+   "modified_props": [
+    "model_name",
+    "use_model_name"
+   ]
+  },
+  {
+   "annotation": "",
+   "nod": "nuggets/applyc50_node1.nod",
+   "var": "applyc50_node1",
+   "kind": "applier",
+   "tooltip": "",
+   "label": "応答予測",
+   "pred_ids": [
+    "id6AR11T3VNXJN"
+   ],
+   "type": "applyc50",
+   "custom_name": "応答予測",
+   "updating_node_id": "id8JH1ZEKMQZPR",
+   "succ_ids": [
+    "id5B81ZJ5PI45Y",
+    "idQY1ZJ6ZWBEE"
+   ],
+   "refresh_link_state": "TurnOn",
+   "x": 594,
+   "builder_stream_id": "id8ZU1ZFDGZ32F",
+   "y": 97,
+   "id": "id4XN11JHG6PJQ",
+   "class": "ApplyC5RuleNode",
+   "modified_props": [
+    "use_custom_name",
+    "calculate_variable_importance",
+    "custom_name",
+    "updating_node_id",
+    "refresh_link_state",
+    "builder_stream_id",
+    "builder_node_id"
+   ],
+   "builder_node_id": "id8JH1ZEKMQZPR",
+   "algorithm": "C5"
+  },
+  {
+   "annotation": "",
+   "var": "analysis_node1",
+   "kind": "terminal",
+   "tooltip": "",
+   "label": "精度分析",
+   "pred_ids": [
+    "id4XN11JHG6PJQ"
+   ],
+   "type": "analysis",
+   "custom_name": "",
+   "succ_ids": [],
+   "x": 714,
+   "y": 37,
+   "id": "idQY1ZJ6ZWBEE",
+   "class": "AnalysisNode",
+   "modified_props": []
+  },
+  {
+   "annotation": "",
+   "var": "table_node1",
+   "kind": "terminal",
+   "tooltip": "",
+   "label": "テーブル",
+   "pred_ids": [
+    "id4XN11JHG6PJQ"
+   ],
+   "type": "table",
+   "custom_name": "",
+   "succ_ids": [],
+   "x": 714,
+   "y": 157,
+   "id": "id5B81ZJ5PI45Y",
+   "class": "TableNode",
+   "modified_props": []
+  }
+ ],
+ "tool_version": "test",
+ "stream": {
+  "decimal_separator": null,
+  "annotation": "",
+  "comment_count": 0,
+  "time_format": "HH:MM:SS",
+  "encoding": "SystemDefault",
+  "script": "",
+  "script_language": "Python",
+  "name": "campaign_response",
+  "execute_method": "Normal",
+  "date_format": "YYYY-MM-DD",
+  "id": "idSAMPLE0000001",
+  "modified_props": {
+   "use_max_set_size": true,
+   "min_canvas_height": 1050,
+   "parameters_table": [],
+   "parameters": null,
+   "min_canvas_width": 1680
+  },
+  "parameters": []
+ },
+ "elapsed_ms": 0,
+ "links": [
+  {
+   "from": "id5DR11JXTLNY4",
+   "to": "id4RG116BHZ5VE"
+  },
+  {
+   "from": "id4RG116BHZ5VE",
+   "to": "id3B411EI2J5IJ"
+  },
+  {
+   "from": "id3B411EI2J5IJ",
+   "to": "id6AR11T3VNXJN"
+  },
+  {
+   "from": "id6AR11T3VNXJN",
+   "to": "id4XN11JHG6PJQ"
+  },
+  {
+   "from": "id6AR11T3VNXJN",
+   "to": "id8JH1ZEKMQZPR"
+  },
+  {
+   "from": "id4XN11JHG6PJQ",
+   "to": "id5B81ZJ5PI45Y"
+  },
+  {
+   "from": "id4XN11JHG6PJQ",
+   "to": "idQY1ZJ6ZWBEE"
+  }
+ ]
+}
