@@ -1,5 +1,7 @@
 # strcodec — SPSS Modeler `.str` ⇄ Jython codec for coding agents
 
+[English](README.en.md) | 日本語
+
 IBM SPSS Modeler のストリームファイル（`.str`、バイナリ）を、コーディングエージェントが読める **正規化 Jython + 要約** に変換し、その Jython から **元のストリームを再現できる自己完結スクリプト**を生成するツールセットです。IBM Bob IDE 向けの skills / hooks を同梱していますが、CLI 部分は任意のエージェントや手作業でも使えます。機能は以下の 2 つ。
 
 - **decode**: `.str` → `<名前>.strcode/`（要約 `summary.md`、編集用 `stream.py`、`structure.json`、モデルナゲット `.nod`）。エージェントはこれを読んでストリームを説明できる。
@@ -176,6 +178,7 @@ Modeler の GUI にある「ノードをスクリプトへ貼り付け」機能�
 ```
 .
 ├── README.md
+├── README.en.md                   英語版 README
 ├── install-strcodec.ps1           インストール／更新スクリプト（方法 A）
 ├── AGENTS.md                      エージェント向け常設ルール
 ├── docs/strcodec-manual.md        詳細説明書
