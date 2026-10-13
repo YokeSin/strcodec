@@ -9,6 +9,14 @@ strcodec is a toolkit that converts IBM SPSS Modeler stream files (`.str`, a bin
 
 For details on how it works, artifact specifications, the rationale behind conversion rules, and validation records, see the [strcodec manual](docs/strcodec-manual.md) (Japanese).
 
+## ⚠️ Disclaimer and Support Notice
+
+This is an independent, unofficial project and is not developed, endorsed, or supported by IBM. This tool uses the internal `JythonGenerator` class of IBM SPSS Modeler. This usage is not documented as a public API in IBM's official documentation and is therefore presumed to be outside the scope of IBM's official support and compatibility guarantees.
+
+Internal implementations may change without notice, and compatibility with future versions of SPSS Modeler is not guaranteed. Users should back up their original stream files and carefully validate all generated outputs before use, especially in production environments.
+
+Tested with: IBM SPSS Modeler 19.0.
+
 ---
 
 ## Requirements
