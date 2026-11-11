@@ -54,7 +54,7 @@ SPSS Modeler のストリームファイル（`.str`）はバイナリ（内部�
 
 ### 1.2 手段: JythonGenerator
 
-Modeler には GUI の「ノードをスクリプトへ貼り付け」機能があり、そのバックエンドが `modeler-base.jar` の `com.spss.clementine.scripting.jython.JythonGenerator` です。`public` ですが IBM ドキュメントに記載のない内部 API で、Modeler の Jython 実行環境（`clemb.exe -script` またはストリームスクリプト）の中でだけ使えます。
+Modeler には GUI の「ノードをスクリプトへ貼り付け」機能があり、そのバックエンドが `com.spss.clementine.scripting.jython.JythonGenerator` です。`public` ですが IBM ドキュメントに記載のない内部 API で、Modeler の Jython 実行環境（`clemb.exe -script` またはストリームスクリプト）の中でだけ使えます。
 
 `generateStreamFragment(List<Node>)` を呼ぶと、渡したノード群を再構築する Jython コード（`createAt` / `setPropertyValue` / `setKeyedPropertyValue` / `link`）が文字列で返ります。
 
